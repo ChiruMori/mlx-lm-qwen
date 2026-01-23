@@ -1,0 +1,10 @@
+[project]
+name = "mlx-lm-qwen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "mlx-lm>=0.19.2",
+    "swanlab>=0.7.6",
+]
