@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "mlx-lm>=0.19.2",
+    "openai>=2.2.0",
     "swanlab>=0.7.6",
 ]

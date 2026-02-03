@@ -21,6 +21,16 @@ source .venv/bin/activate
 6. 待训练完成后，可以运行 `chat.bash` 在控制台直接运行模型以开始对话，测试效果
 7. 最后可以运行 `export.bash` 导出模型文件到 `QWen/` 目录下，以在其他软件中使用（可以使用 `--export-gguf` 选项来输出 gguf 格式）
 
+- - -
+
+## 生成测试用例
+
+生成测试用例的代码在 `gen` 目录下
+
+`batch_generate.py` 是一个用于批量生成 LLM 训练数据集的工具。它利用外部 LLM 接口（支持 OpenAI 兼容服务）按照 `prompt.md` 中定义的系统提示词，为给定的问题集合生成带有多角色思考过程的回答。
+
+修改提示词（`prompt.md`）、问题列表（`questions.json`）、OpenAI 连接配置（在 batch_generate.py 中）后，直接启动 `batch_generate.py` 即可，程序运行完成后，会生成 `dataset.json` 复核、划分后，可用于训练
+
 ## 参考
 
 - [微调教程](https://github.com/ShaohonChen/Finetune_Qwen3_on_MacBook)

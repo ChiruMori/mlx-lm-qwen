@@ -15,3 +15,7 @@ Qwen
 
 # Mac
 .DS_Store
+
+# 排除实际使用的文件
+src/gen/prompt.md
+src/conf/conf.yaml
