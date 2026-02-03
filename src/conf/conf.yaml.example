@@ -1,5 +1,5 @@
 gen:
-  out_dir: mlx_data/gen
+  out_dir: mlx_data/gen/xx.jsonl
   questions_file: gen/questions.txt
   prompt_file: gen/prompt.md
   samples_cnt: 10

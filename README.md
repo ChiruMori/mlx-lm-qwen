@@ -27,9 +27,11 @@ source .venv/bin/activate
 
 生成测试用例的代码在 `gen` 目录下
 
-`batch_generate.py` 是一个用于批量生成 LLM 训练数据集的工具。它利用外部 LLM 接口（支持 OpenAI 兼容服务）按照 `prompt.md` 中定义的系统提示词，为给定的问题集合生成带有多角色思考过程的回答。
+`src/gen/batch_generate.py` 是一个用于批量生成 LLM 训练数据集的工具。它利用外部 LLM 接口（支持 OpenAI 兼容服务）按照 `src/gen/prompt.md` 中定义的系统提示词，为给定的问题集合生成带有多角色思考过程的回答。
 
-修改提示词（`prompt.md`）、问题列表（`questions.json`）、OpenAI 连接配置（在 batch_generate.py 中）后，直接启动 `batch_generate.py` 即可，程序运行完成后，会生成 `dataset.json` 复核、划分后，可用于训练
+修改提示词（`prompt.md`）、问题列表（`questions.json`）、OpenAI 连接配置（在 `src/conf/conf.yaml` 中）后，启动 `python -m src.gen.batch_generate`，程序运行完成后，会生成 `.jsonl` 数据集文件，复核、划分后，可用于训练
+
+生成过程有设计进度保存（通过保存索引到 `.progress` 文件），在不修改问题列表文件的情况下，中断后仍可恢复进度。
 
 ## 参考
 
